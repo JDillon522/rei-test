@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Test #3 - Basic jQuery</h1>
+
+  <p> Complete the following tasks:</p>
+  <ol>
+    <li>Make the first button change its text from "Foo" to "Bar" when it is clicked on.</li>
+    <li>Make the second button replace itself with an image that is 300 pixels by 400 pixels. You can use any image you like.</li>                
+  </ol>
+
+  <p>
+    <button class="btn btn-default" id="first-btn">Foo</button>
+  </p>
+  <p>
+    <button class="btn btn-default" id="second-btn">Replace with Image!</button>
+    <img src="http://dummyimage.com/300x400/efe9f5/030305.png" alt="dummy 300x400 image" id="hiddenImg" class="hidden">
+  </p>
+
+  <p>
+    <button class="btn btn-success" id="reset-btn">Reset the Buttons</button>
+  </p>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  $('#first-btn').click(function() {
+    $this = $(this);
+    var fooBar = $this.text();
+
+    if (fooBar === 'Foo') {
+      $this.text('Bar');
+    } else {
+      $this.text('Foo');
+    }
+  });
+
+  $('#second-btn').click(function() {
+    $('#hiddenImg').removeClass('hidden');
+    $(this).addClass('hidden');
+  });
+
+  $('#reset-btn').click(function() {
+    $('#first-btn').text('Foo');
+    $('#second-btn').removeClass('hidden');
+    $('#hiddenImg').addClass('hidden');
+  });
+</script>

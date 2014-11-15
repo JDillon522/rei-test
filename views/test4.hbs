@@ -1,0 +1,40 @@
+<div class="container">
+
+  <h1>Test #4 - Basic JavaScript</h1>
+
+  <p>There is JavaScript in the source code of this page that is incomplete. Complete the requirements in each comment as described. Do not use jQuery or any other frameworks for this test.</p>
+
+</div>
+
+<script type="text/javascript">
+
+
+  // This function should run on page load. Modify the source code of this file so that this function is called when the page loads.
+  function init() {
+    var nums = askForNumbers();
+    var alertThis = addTwoNumbers(nums[0], nums[1]);
+    alert(alertThis);
+    // This function should call the askForNumbers function and display an alert box of the result of addTwoNumbers
+  };
+
+  function addTwoNumbers(x, y) {
+    // Fill out this function so that it will add x to y and return the result
+    if (typeof x === 'string') {
+      x = parseInt(x, 10);
+      y = parseInt(y, 10);
+    }
+    var sum = x + y;
+    return sum
+  };
+
+  function askForNumbers() {
+    // This function should prompt the user for two numbers, one at a time. Then it should call the addTwoNumbers function and return the result.
+    var one = prompt("Give me a number");
+    var two = prompt("Give me a second number...");
+    return [one, two];
+  };
+
+  window.onload = function() {
+    init();
+  };
+</script>
