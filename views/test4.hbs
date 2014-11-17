@@ -6,6 +6,63 @@
 
 </div>
 
+<h3>For your viewing pleasure</h3>
+<pre>
+  function init() {
+    var nums = askForNumbers();
+    var alertThis = addTwoNumbers(nums[0], nums[1]);
+    alert(alertThis);
+  };
+
+  function addTwoNumbers(x, y) {
+    var sum = x + y;
+    return sum
+  };
+
+  function askForNumbers() {
+    var one = prompt("Give me any number, word, or sentence");
+    var two = prompt("Give me a second set...");
+
+    one = convertToInt(one);
+    two = convertToInt(two);
+
+    return [one, two];
+  };
+
+  function convertToInt(num) {
+    var newNum;
+    var longString = 0;
+
+    if (!num) { 
+      return false; 
+    } 
+
+    if (typeof num === 'string') {
+      newNum = parseInt(num, 10);  
+    } else if (typeof num === 'number') {
+      return num;
+    }
+
+    if (!newNum || newNum === 'NaN') {
+      for (var i = 0; i < num.length; i++) {
+        var asciiCode = num.charCodeAt(i);
+
+        if (asciiCode !== 'NaN') {
+          longString = longString + asciiCode;
+        }
+      };
+
+      return longString;
+    } else {
+      return newNum;
+    }
+  }
+
+  window.onload = function() {
+    init();
+  };
+</pre>
+
 <script type="text/javascript">
 
 
@@ -19,20 +76,49 @@
 
   function addTwoNumbers(x, y) {
     // Fill out this function so that it will add x to y and return the result
-    if (typeof x === 'string') {
-      x = parseInt(x, 10);
-      y = parseInt(y, 10);
-    }
     var sum = x + y;
     return sum
   };
 
   function askForNumbers() {
     // This function should prompt the user for two numbers, one at a time. Then it should call the addTwoNumbers function and return the result.
-    var one = prompt("Give me a number");
-    var two = prompt("Give me a second number...");
+    var one = prompt("Give me any number, word, or sentence");
+    var two = prompt("Give me a second set...");
+
+    one = convertToInt(one);
+    two = convertToInt(two);
+
     return [one, two];
   };
+
+  function convertToInt(num) {
+    var newNum;
+    var longString = 0;
+
+    if (!num) { 
+      return false; 
+    } 
+
+    if (typeof num === 'string') {
+      newNum = parseInt(num, 10);  
+    } else if (typeof num === 'number') {
+      return num;
+    }
+
+    if (!newNum || newNum === 'NaN') {
+      for (var i = 0; i < num.length; i++) {
+        var asciiCode = num.charCodeAt(i);
+
+        if (asciiCode !== 'NaN') {
+          longString = longString + asciiCode;
+        }
+      };
+
+      return longString;
+    } else {
+      return newNum;
+    }
+  }
 
   window.onload = function() {
     init();

@@ -26,7 +26,11 @@
           var navItem = $(this);
 
           if ('/' + navItem.attr('id') === currentPath) {
-            navItem.addClass('active');
+            return navItem.addClass('active');
+          }
+
+          if (currentPath === '/') {
+            return $('#index').addClass('active');
           }
         });
       });
@@ -39,7 +43,7 @@
   <body>
     <div class="container">
         <nav>
-          <ul class="nav nav-tabs">
+          <ul class="nav nav-pills">
             <li role="presentation" class="active" id="index"><a href="./">Index</a></li>
             <li role="presentation" id="test1" ><a href="./test1">Test 1</a></li>
             <li role="presentation" id="test2" ><a href="./test2">Test 2</a></li>
@@ -53,9 +57,14 @@
         </nav>
       {{{body}}}
 {{else}}
-  <body style="background-color: #0E0E0E; color: white;
-  font-family: 'Lato', sans-serif">
-    <div class="container">
+  {{!- Note: Uber Badness to do inline styling. I just did it to quickly get around having to have two compiled css files and other handlebar goofyness}}
+  <body style="background-color: #0E0E0E; 
+               color: white;
+               font-family: 'Lato', sans-serif;   
+               width: 100%;
+               padding: 0;
+               margin: 0;">
+    <div class="container-fluid">
       {{{body}}}
 {{/unless}}
     </div>

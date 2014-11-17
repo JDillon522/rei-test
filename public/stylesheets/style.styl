@@ -133,17 +133,9 @@ TS_Pink = #EC0A91;
 TS_Black = #0E0E0E;
 TS_Light_Blue = #00AEEF;
 
-
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
-
-body {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.container {
+.container-fluid {
   .header {
     padding: 10px;
     
@@ -157,6 +149,7 @@ body {
     }
     
     .title {
+      text-align: center;
       
       h1, h4, {
         width: 100%;
@@ -177,7 +170,7 @@ body {
     }
   }
 
-  .nav {
+  .myNav {
     background-color: TS_Pink;
     height: auto;
     padding: 5px 0 1px 0;
@@ -228,11 +221,18 @@ body {
     }
   }
 
+  .carouselCol {
+    margin-top: 35px;
+  }
+  
   .carouselContainer {
     padding: 20px;
+    clear: both;
     
     #carousel-ts {
       border: 2px solid TS_Pink;
+      max-width: 560px;
+      margin: 0 auto;
       
       .carousel-indicators {
         bottom: -45px;
