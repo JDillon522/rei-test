@@ -1,0 +1,278 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+/***************************
+*
+* FOR TESTS 1 - 7
+*
+****************************/
+.hidden {
+  display: none;
+}
+.flexslider {
+  max-width: 800px;
+  margin: auto;
+}
+.overkillHeader {
+  margin-bottom: 30px;
+}
+.overkillHeader .big {
+  color: #f00;
+}
+@media (max-width: 1000px) {
+  .overkillHeader .big {
+    display: none;
+  }
+}
+.overkillHeader .medium {
+  color: #00f;
+  display: none;
+}
+@media (min-width: 700px) and (max-width: 999px) {
+  .overkillHeader .medium {
+    display: initial;
+  }
+}
+.overkillHeader .small {
+  color: #008000;
+  display: none;
+}
+@media (min-width: 500px) and (max-width: 699px) {
+  .overkillHeader .small {
+    display: initial;
+  }
+}
+.overkillHeader .smaller {
+  color: #000;
+  display: none;
+}
+@media (max-width: 500px) {
+  .overkillHeader .smaller {
+    display: initial;
+  }
+}
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 1000px) {
+  .mainContainer {
+    flex-direction: row-reverse;
+  }
+}
+@media (max-width: 700px) {
+  .mainContainer {
+    flex-direction: column;
+  }
+}
+.mainContainer .articleContainer {
+  width: 50%;
+  margin: 0 auto 0 10px;
+  order: 1;
+}
+.mainContainer .articleContainer .row {
+  margin-left: 0;
+  margin-right: 0;
+  width: 90%;
+}
+.mainContainer .articleContainer img {
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .mainContainer .articleContainer {
+    margin: 0 10px 0 auto;
+  }
+}
+@media (max-width: 700px) {
+  .mainContainer .articleContainer {
+    margin: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .mainContainer .articleContainer {
+    order: 2;
+    margin: auto;
+    width: 100%;
+  }
+}
+.mainContainer .flexsliderContainer {
+  width: 50%;
+  margin: 0 10px 0 auto;
+  order: 2;
+}
+.mainContainer .flexsliderContainer .row {
+  margin-left: 0;
+  margin-right: 0;
+  width: 90%;
+}
+@media (max-width: 1000px) {
+  .mainContainer .flexsliderContainer {
+    margin: 0 auto 0 10px;
+  }
+}
+@media (max-width: 700px) {
+  .mainContainer .flexsliderContainer {
+    margin: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .mainContainer .flexsliderContainer {
+    order: 1;
+    margin: auto;
+    width: 100%;
+  }
+}
+/***************************
+*
+* FOR THE HOMEWORK ASSIGNMENT
+*
+****************************/
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+.container-fluid .header {
+  padding: 10px;
+}
+.container-fluid .header .imgContainer {
+  padding-right: 0;
+}
+.container-fluid .header .imgContainer img {
+  padding: 5px;
+  height: 65px;
+}
+.container-fluid .header .title {
+  text-align: center;
+}
+.container-fluid .header .title h1,
+.container-fluid .header .title h4 {
+  width: 100%;
+  margin: 0;
+  padding: 5px 5%;
+  font-weight: lighter;
+}
+.container-fluid .header .title h1 {
+  font-size: 1.75em;
+  padding-left: 0;
+}
+.container-fluid .header .title h4 {
+  font-size: 0.7em;
+  padding-left: 0;
+}
+.container-fluid .myNav {
+  background-color: #ec0a91;
+  height: auto;
+  padding: 5px 0 1px 0;
+  float: left;
+  width: 100%;
+}
+.container-fluid .myNav .menu {
+  padding-bottom: 5px;
+}
+.container-fluid .myNav .menu button {
+  width: 30%;
+  color: #fff;
+  border: none;
+  background-color: #ec0a91;
+}
+.container-fluid .myNav .menu input {
+  width: 60%;
+}
+.container-fluid .myNav ul {
+  float: left;
+  padding: 0;
+  margin-bottom: 0;
+}
+.container-fluid .myNav ul li {
+  float: left;
+  list-style-type: none;
+  text-decoration: none;
+  padding: 7px;
+  width: 50%;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 500;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.container-fluid .myNav ul li a {
+  color: #fff;
+}
+.container-fluid .myNav .hideNav {
+  display: none;
+}
+.container-fluid .carouselCol {
+  margin-top: 35px;
+}
+.container-fluid .carouselContainer {
+  padding: 20px;
+  clear: both;
+}
+.container-fluid .carouselContainer #carousel-ts {
+  border: 2px solid #ec0a91;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.container-fluid .carouselContainer #carousel-ts .carousel-indicators {
+  bottom: -45px;
+}
+.container-fluid .carouselContainer #carousel-ts .carousel-control .glyphicon-chevron-right {
+  color: #ec0a91;
+  top: 107%;
+}
+.container-fluid .carouselContainer #carousel-ts .carousel-control .glyphicon-chevron-left {
+  color: #ec0a91;
+  top: 107%;
+  left: 15%;
+}
+.container-fluid .carouselContainer .carousel-indicators li {
+  border: none;
+  background-color: #808080;
+}
+.container-fluid .carouselContainer .carousel-indicators .active {
+  background-color: #fff;
+  height: 10px;
+  with: 10px;
+}
+.container-fluid .main {
+  margin: 30px 10px;
+  text-align: center;
+  font-size: 1.1em;
+}
+.container-fluid .main a {
+  color: #00aeef;
+}
+.container-fluid .main .gray {
+  color: #808080;
+}
+.container-fluid .footer {
+  float: left;
+  width: 100%;
+}
+.container-fluid .footer ul {
+  list-style-type: none;
+  float: left;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  background-color: #0e0e0e;
+}
+.container-fluid .footer ul li {
+  float: left;
+  margin: auto;
+}
+.container-fluid .footer ul li img {
+  height: 40px;
+  padding: 2px;
+}
+.container-fluid .footer .backToTop {
+  clear: both;
+  background-color: #ec0a91;
+  text-align: center;
+  height: 60px;
+  width: 100%;
+  padding: 20px;
+  font-weight: lighter;
+  font-size: 1.5em;
+}
