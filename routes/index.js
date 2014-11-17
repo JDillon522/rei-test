@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
+
 router.get('/', function(req, res) {
   res.render('index', { title: 'Barkley REI Frontend Test' });
 });
@@ -32,6 +33,10 @@ router.get('/test6', function(req, res) {
 
 router.get('/test7', function(req, res) {
   res.render('test7', { title: 'Test #7 - Make a jQuery Plugin' });
+});
+
+router.get('/homework', function(req, res) {
+  res.render('homework', { title: 'Responsive Time Square', noNav: true });
 });
 
 module.exports = router;

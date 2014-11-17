@@ -1,4 +1,4 @@
-<div class="container">
+<div>
   <h1>Test #7 - Make a jQuery Plugin</h1>
   <p>
     Please combine the
@@ -21,40 +21,83 @@
     <code>$.hulkify().hide('slow')</code>
     must be working code.
   </p>
-  <div id="box" style="width:200px;height:200px;background-color:#ddd;">
-    <p>i'm content in a box</p>
+
+  <div style="display:inline-block">
+    <h4>Hulkifed and Hide on button click</h4>
+    <div id="box1" style="width:200px;height:200px;background-color:#ddd;">
+      <p>i'm content in a box</p>
+    </div>
+    <input type="button" class="btn large primary" id="btnHulkify" value="hulkify and hide!" />
   </div>
-  <br />
-  <input type="button" class="btn large primary" id="btnHulkify" value="hulkify!" />
+
+  <div style="display:inline-block">
+    <h4>Hulkifed and Hide on page load</h4>
+    <div id="box2" style="width:200px;height:200px;background-color:#ddd;">
+      <p>i'm content in a box</p>
+    </div>
+    <input type="button" class="btn large primary" id="btnReset" value="reset" />
+  </div>
+
+  <div style="display:inline-block">
+    <h4>Just Hulkifed</h4>
+    <div id="box3" style="width:200px;height:200px;background-color:#ddd;">
+      <p>i'm content in a box</p>
+    </div>
+    <input type="button" class="btn large primary" id="btnHulkifyOnly" value="hulkify!" />
+  </div>
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
 <script type="text/javascript">
-  ///
-  ///     this function accepts a jquery object and makes its background color green
-  ///
+  // To avoid "potential" scoping issues with other libraries using the '$'. But who does that anyway?
+  (function($) {
+    // Define the plugin
+    $.fn.hulkify = function() {
+      var $this = $(this);
+
+      if (!$this.length) {
+        $this = $("#box2");
+      }
+      
+      MakeItemGreen($this);
+      MakeItemBigger($this);
+      return $this;
+    };
+
+    // Add the plugin directly to the jQuery namespace. This allows for '$.hulkify()'
+    // Without this, you would have to call it by `$('something').hulkify()`
+    $.hulkify = function(item) {
+      return $.fn.hulkify(item);
+    };
+  }(jQuery));
+
   function MakeItemGreen(item) {
     $(item).css({backgroundColor:"green"});
+  };
 
-  }
-  ///
-  ///     this function accepts a jquery object and makes the item bigger
-  ///
   function MakeItemBigger(item){
     $(item).css({width:"+=100px",height:"+=100px"});
-  }
-  ///
-  ///     document.ready
-  ///
+  };
+
   $(function () {
-    //
-    //      replace the code inside this bind to .hulkify
-    //
-    $('#btnHulkify').bind("click", function () {
-      var $item = $("#box");
-      MakeItemBigger($item);
-      MakeItemGreen($item);
+    /* Moment of truth
+     * Note: calling it this way does not pass a context to the function in the same way 
+     *    that `box.hulkify()` does. Thats why the plugin has a fallback and snags #box2 
+     *    for the sake of the example. 
+     */
+    $.hulkify().hide('slow');
+    
+    $('#btnHulkify').click(function(){
+      var box = $("#box1");
+      box.hulkify().hide('slow');
+    });
+
+    $('#btnHulkifyOnly').click(function(){
+      var box = $("#box3");
+      box.hulkify();
+    });
+
+    $('#btnReset').click(function() {
+      $('#box1, #box2').css({width:'200px', height:'200px', backgroundColor: '#ddd'}).show();
     });
   });
 </script> 

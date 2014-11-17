@@ -3,29 +3,61 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
     <meta name="description" content="{{title}}">
-    <meta name="viewport" content="width=device-width" />
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
+    <script src="./javascripts/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap-theme.min.css" />
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // Get current path
+        var currentPath = window.location.pathname;
+
+        // Remove current 'active' class on nav
+        var nav = $('ul.nav li');
+        nav.removeClass('active');
+        
+        // Iterate, find current nav that matches path, add 'active' class
+        $.each(nav, function() {
+          var navItem = $(this);
+
+          if ('/' + navItem.attr('id') === currentPath) {
+            navItem.addClass('active');
+          }
+        });
+      });
+    </script>
+
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
-    {{! <script src="./javascripts/scripts.js"></script>}}
   </head>
+{{#unless noNav}}
   <body>
-    <nav>
-      <ul>
-        <li><a href="./">Index</a></li>
-        <li><a href="./test1">Test 1</a></li>
-        <li><a href="./test2">Test 2</a></li>
-        <li><a href="./test3">Test 3</a></li>
-        <li><a href="./test4">Test 4</a></li>
-        <li><a href="./test5">Test 5</a></li>
-        <li><a href="./test6">Test 6</a></li>
-        <li><a href="./test6">Test 6</a></li>
-      </ul>
-    </nav>
-    {{{body}}}
+    <div class="container">
+        <nav>
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active" id="index"><a href="./">Index</a></li>
+            <li role="presentation" id="test1" ><a href="./test1">Test 1</a></li>
+            <li role="presentation" id="test2" ><a href="./test2">Test 2</a></li>
+            <li role="presentation" id="test3" ><a href="./test3">Test 3</a></li>
+            <li role="presentation" id="test4" ><a href="./test4">Test 4</a></li>
+            <li role="presentation" id="test5" ><a href="./test5">Test 5</a></li>
+            <li role="presentation" id="test6" ><a href="./test6">Test 6</a></li>
+            <li role="presentation" id="test7" ><a href="./test7">Test 7</a></li>
+            <li role="presentation" id="homework" ><a href="./homework">Homework</a></li>
+          </ul>
+        </nav>
+      {{{body}}}
+{{else}}
+  <body style="background-color: #0E0E0E; color: white;
+  font-family: 'Lato', sans-serif">
+    <div class="container">
+      {{{body}}}
+{{/unless}}
+    </div>
   </body>
 </html>

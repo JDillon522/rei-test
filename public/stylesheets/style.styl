@@ -2,36 +2,315 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+/***************************
+*
+* FOR TESTS 1 - 7
+*
+****************************/
+
+.hidden {
+  display: none;
+}
+
+.flexslider {
+  max-width: 800px;
+  margin: auto;
+}
+
+
+.overkillHeader {
+  margin-bottom: 30px;
   
-a {
-  color: #00B7FF;
+  .big {
+    color: red;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  .medium {
+    color: blue;
+    display: none;
+    @media (min-width: 700px) and (max-width: 999px) {
+      display: initial;
+    }
+  }
+
+  .small {
+    color: green;
+    display: none;
+    @media (min-width: 500px) and (max-width: 699px) {
+      display: initial;
+    }
+  }
+
+  .smaller {
+    color: black;
+    display: none;
+    @media (max-width: 500px) {
+      display: initial;
+    }
+  }
 }
   
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 1000px) {
+    flex-direction: row-reverse;
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+  
+  .articleContainer {
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+      width: 90%;
+    }
     
-    li {
-      display: inline;
-      
-      a {
-        text-decoration: none;
-        padding: .2em 1em;
-        color: #fff;
-        background-color: #036;
-        
-        &:hover {
-          color: #fff;
-          background-color: #369;
-        }
-      }
+    img {
+      width: 100%;
+    }
+    
+    width: 50%;
+    margin: 0 auto 0 10px;
+    order: 1;
+    
+    @media (max-width: 1000px) {
+      margin: 0 10px 0 auto;
+    }
+    @media (max-width: 700px) {
+      margin: auto;
+      width: 100%;
+    }
+    @media (max-width: 500px) {
+      order: 2;
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  .flexsliderContainer {
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+      width: 90%;
+    }
+    
+    width: 50%;
+    margin: 0 10px 0 auto;
+    order: 2;
+    
+    @media (max-width: 1000px) {
+      margin: 0 auto 0 10px;
+    }
+    @media (max-width: 700px) {
+      margin: auto;
+      width: 100%;
+    }
+    @media (max-width: 500px) {
+      order: 1;
+      margin: auto;
+      width: 100%;
     }
   }
 }
 
-.hidden {
-  display: none;
+
+/***************************
+*
+* FOR THE HOMEWORK ASSIGNMENT
+*
+****************************/
+
+// Color variables. Picked out with help from Adobe Color CC.
+// See it at: https://color.adobe.com/rei-test-color-theme-4832685/
+TS_Pink = #EC0A91;
+TS_Black = #0E0E0E;
+TS_Light_Blue = #00AEEF;
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  .header {
+    padding: 10px;
+    
+    .imgContainer {
+      padding-right: 0;
+      
+      img {
+        padding: 5px;
+        height: 65px;
+      }
+    }
+    
+    .title {
+      
+      h1, h4, {
+        width: 100%;
+        margin: 0;
+        padding: 5px 5%;
+        font-weight: lighter;
+      }
+      
+      h1 {
+        font-size: 1.75em;
+        padding-left: 0;
+      }
+      
+      h4 {
+        font-size: .7em;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .nav {
+    background-color: TS_Pink;
+    height: auto;
+    padding: 5px 0 1px 0;
+    float: left;
+    width: 100%;
+    
+    .menu {
+      padding-bottom: 5px;
+      
+      button {
+        width: 30%;
+        color: white;
+        border: none;
+        background-color: TS_Pink;  
+      }
+      
+      input {
+        width: 60%;
+      }  
+    }
+    
+    ul {
+      float:left
+      padding: 0;
+      margin-bottom: 0;
+      
+      li {
+        float: left
+        list-style-type: none;
+        text-decoration: none;        
+        padding: 7px;
+        width: 50%;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: 500;
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        
+        a {
+          color: white;
+        }
+      }
+    }
+    
+    .hideNav {
+      display: none;
+    }
+  }
+
+  .carouselContainer {
+    padding: 20px;
+    
+    #carousel-ts {
+      border: 2px solid TS_Pink;
+      
+      .carousel-indicators {
+        bottom: -45px;
+      }
+      
+      .carousel-control {
+        .glyphicon-chevron-right {
+          color: TS_Pink;
+          top: 107%;
+        }
+        .glyphicon-chevron-left {
+          color: TS_Pink;
+          top: 107%;
+          left: 15%;
+        }
+      }
+    }
+    
+    .carousel-indicators {
+      li {
+        border: none;
+        background-color: gray;
+      }
+      
+      .active {
+        background-color: white;
+        height: 10px;
+        with: 10px;
+      }
+    }
+  }
+
+  .main {
+    margin: 30px 10px;
+    text-align: center;
+    font-size: 1.1em;
+    
+    a {
+      color: TS_Light_Blue;      
+    }
+    
+    .gray {
+      color: gray;
+    }
+  }
+
+  .footer {
+    float: left;
+    width: 100%;
+    
+    ul {
+      list-style-type: none;
+      float: left;
+      padding: 15px;
+      width: 100%;
+      display: flex;
+      background-color: TS_Black;
+        
+      li {
+        float: left;
+        margin: auto;
+        
+        img {
+          height: 40px;
+          padding: 2px;
+        }
+      }
+    }
+    
+    .backToTop {
+      clear: both;
+      background-color: TS_Pink;
+      text-align: center;
+      height: 60px;
+      width: 100%;
+      padding: 20px;
+      font-weight: lighter;
+      font-size: 1.5em;
+    }
+  }
 }

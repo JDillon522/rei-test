@@ -1,12 +1,162 @@
-<div class="container">
+<div>
   <h1>Test #6 - Responsive</h1>
   <p>Combine tests #2 and #5 into a responsive layout with two breakpoints.
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<div class="row overkillHeader">
+  <h1>Resize Your screen between from greater than 1000px to less than 500px for the following breakpoints:</h1>
+  <h3 class="big">Big: Screens 100px and larger</h3>
+  <h3 class="medium">Medium: Screens between 999px and 700px</h3>
+  <h3 class="small">Small: Screens between 699px and 500px</h3>
+  <h3 class="smaller">Really Small: Screens 499px and smaller </h3>
+</div>
+
+
+<div class="mainContainer">
+  <div class="articleContainer">
+    <div class="row">
+      <section>
+        <article>
+          <h1 class="title">Top 10 Things to See and Do in Phoenix</h1>
+          <time datetime="2013-03-08" pubdate>March 8th, 2013</time>
+          
+          <h3><address class="author">by Joe Blogger</address></h3>
+          
+          <section class="summary">
+            <p>Phoenix’s perpetual sunshine might tempt you to spend all your free time sipping frozen beverages next to a swimming pool. Don’t give in. Exploring the Sonoran Desert’s horizons will broaden yours.</p>
+          </section>
+          
+          <section>
+            <h3 class="subTitle">1. Camelback Mountain</h3>
+
+            <p>Nearly every outdoors-loving Phoenix local has, at some time or another, started his or her day with a hike to the top of Camelback Mountain. The city’s most famous landmark resembles a dromedary camel in repost, and the mountain challenges hikers with a rugged but rewarding trek to its 2,700-foot “hump”. Visitors who prefer not to scale Camelback can still gawk at it from a nearby restaurant patio.</p>
+          </section>
+
+          <section>
+            <h3 class="subTitle">2. Musical Instrument Museum</h3>
+          
+            <p>Phoenix’s newest must-see attraction is the first museum in the world dedicated to the celebration of global instruments. This $250 million museum features a collection of more than 15,000 instruments – including the last guitar Elvis played in concert.</p>
+          </section>
+          
+          <section>
+            <h3 class="subTitle">3. Desert Botanical Garden</h3>
+            <img src="http://dummyimage.com/700x300/efe9f5/030305.png" alt="dummy 700x300 image">
+            <p><small>Photo credit: Desert Botanical Garden, Adam Rodriguez (Actually <a href="http://dummyimage.com/">Dummy Image.com</a> ... But I digress)</small></p>
+            <p>As its name suggests, this outdoor museum showcases desert plants – and not just those native to the Southwest. Among the succulents that adorn the garden’s 50-acre grounds are endangered desert species from around the world, including Dali-esque trees from North Africa and sprawling cactuses from Mesopotamia.</p>
+          </section>
+          
+          <section>
+            <h3 class="subTitle">4. Golf</h3>
+
+            <p>Greater Phoenix is home to more than 200 golf courses, many designed by legends of the game such as Robert Trent Jones, Jack Nicklaus and Arnold Palmer. Check out stay-and-play packages at area resorts before you come, and consider playing one of Phoenix’s true desert layouts.</p>  
+          </section>
+          
+          <section>
+            <h3 class="subTitle">5. Heard Museum</h3>
+    
+            <p>The Heard is Arizona’s most famous museum. The traditional and contemporary art on display provides insight into the culture of Arizona’s 22 Native American tribes. Not to be missed is the haunting exhibit on Indian boarding schools. The Heard Museum Shop is one of the best places in Phoenix to buy authentic American Indian jewelry, pottery, paintings, sculpture and weavings.</p>
+          </section>
+          
+          <section>
+            <h3 class="subTitle">6. Biltmore Fashion Park</h3>
+
+            <p>Located near the famed Arizona Biltmore resort, this fashionable shopping desintation has a garden-park courtyard, upscale retailers and plenty of dining options. Be sure to check out the Fashion Park’s newest addition: UNION, a wing of locally owned boutiques.</p>  
+          </section>
+          
+          <section>
+            <h3 class="subTitle">7. Phoenix Art Museum</h3>
+
+            <p>A major player in the Southwest’s art landscape, Phoenix Art Museum showcases an impressive collection of European, Asian, Latin American, Western American and contemporary pieces. Be sure to check out the sculpture garden, Museum Store and the museum restaurant, Palette.</p>  
+          </section>
+            
+          <section>
+            <h3 class="subTitle">8. Heritage Square</h3>
+            
+            <p>Occupying a city block in downtown Phoenix, Heritage Square is home to the Arizona Science Center. But go for the food. Pizzeria Bianco serves pizza that a New York Times food critic deemed the best in the country, and Nobuo at Teeter House is an Asian-style teahouse by day and a funky izakaya by night.</p>
+          </section>
+
+          <section>
+            <h3 class="subTitle">9. Old Town Scottsdale</h3>
+            
+            <p>The Old West and New West converge in Old Town Scottsdale, where galleries dedicated to American Indian and cowboy arts share a pedestrian-friendly streetscape with shops that sell Southwestern jewelry and crafts. Nearby, you’ll find some of Greater Phoenix’s finest restaurants and trendiest nightlife.</p>
+          </section>
+          
+          <section>
+            <h3 class="subTitle">10. Taliesin West</h3>
+
+            <p>The sprawling wonder at the foot of the McDowell Mountains was the winter home of Frank Lloyd Wright, America’s most famous architect. Wright constructed Taliesin West from sand, gravel and stone he found on the mountain’s talus slope. It’s open to the public for tours.</p>
+          </section>
+
+        </article>        
+      </section>
+
+      <footer>
+        <dl>
+          <dt><h4>Related Posts:</h4></dt>
+          <dl><a href="#">* Arizona Restaurant Week</a></dl>
+          <dl><a href="#">* Ice Skating in Phoenix</a></dl>
+          <dl><a href="#">* Hiking in Phoenix</a></dl>
+        </dl>
+      </footer>
+    </div>
+  </div>
+    
+  <div class="flexsliderContainer">
+    <div class="row">
+      <div class="flexslider">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="./images/flexslider/one.jpg" alt="one">
+              <div class="carousel-caption">
+                First Slide
+              </div>
+            </div>
+            <div class="item">
+              <img src="./images/flexslider/two.jpg" alt="two">
+              <div class="carousel-caption">
+                Second Slide
+              </div>
+            </div>
+            <div class="item">
+              <img src="./images/flexslider/three.jpg" alt="three">
+              <div class="carousel-caption">
+                Third Slide
+              </div>
+            </div>
+            <div class="item">
+              <img src="./images/flexslider/four.jpg" alt="four">
+              <div class="carousel-caption">
+                Fourth Slide
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
 
 <script type="text/javascript">
 
-        // Write your jQuery code here
+  // Rocked some CSS3 flexbox jaz. Woot Woot
 
 </script>
